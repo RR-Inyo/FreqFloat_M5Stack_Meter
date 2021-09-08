@@ -28,6 +28,6 @@ Actually, as the A-D converter accepts only positive voltages, the observed volt
 The Arduino sketch measures the time needed to count 50 rising edges (thus, one second if exactly 50 Hz) and calculates the frequency.
 
 ## Google Spreadsheet
-Just showing the frequency on the LCD is not fun enough. I decided to create a web app on Google Spreadsheet and store the frequency data every ten seconds. Below shows an example graph showing 60 minutes trend of the frequency.
+Just showing the frequency on the LCD is not fun enough. I decided to create a web app on Google Spreadsheet and store the frequency data every ten seconds. Below shows an example graph showing a 60-minute trend of the frequency.
 
 ![Google Spreadsheet graph for 60 minutes of frequency trend](frequency-60min.png)
