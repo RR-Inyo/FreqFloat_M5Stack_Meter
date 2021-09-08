@@ -2,7 +2,7 @@
 Monitoring and showing mains frequency via floating analog input pin by M5Stack
 
 ## Introduction
-The mains, AC-grid, or utility frequency is 50 or 60 Hz depending on the region on the world. Here in East Japan, it is 50 Hz. However, this frequency is *not* perfectly constant, but always fluctuating, reflecting the balance between the supply (generation) and demand (load). Monitoring the mains frequency could be fun as you can see it falls in a hot summer day or rises when it is 5 pm as people stop working.
+The mains, AC-grid, or utility frequency is 50 or 60 Hz depending on the region in the world. Here in East Japan, it is 50 Hz. However, this frequency is *not* perfectly constant, but always fluctuating, reflecting the balance between the supply (generation) and demand (load). Monitoring the mains frequency could be fun as you can see it falls in a hot summer day or rises when it is 5 pm as people stop working.
 
 Monitoring the mains frequency needs connection of your microcontroller or computer to the AC-grid. There are electrical outlets in a house. They are 100 V in Japan while they could be 240 V in some areas in Europe. Dealing with such an *extremely high voltage* is dangerous for an electronics hobbiest like me. Hmm, how can my M5Stack detect the mains voltage?
 
