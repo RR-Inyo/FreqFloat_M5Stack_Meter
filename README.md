@@ -14,7 +14,7 @@ The photo below shows when this program is operating in my M5Stack.
 
 ![Mains frequency monitored by M5Stack](M5Stack_working.jpg)
 
-One of the analog input pin, which is GPIO35 in the photo, is floating and my hand touches it. The human body creates a signal corresponding to the mains voltage. The M5Stack measures the frequency shows and analog meter together with its digital value.
+One of the analog input pin, which is GPIO35 in the photo, is floating and my hand touches it. The human body creates a signal corresponding to the mains voltage. The M5Stack measures the frequency and displays it as an analog meter together with its digital value.
 
 ![M5Stack screen close up](M5Stack_screen.jpg)
 
