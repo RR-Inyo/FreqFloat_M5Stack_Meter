@@ -14,6 +14,9 @@
 #include "dFilt.hpp"
 #include "AnalogMeter.hpp"
 
+/* Uncomment below for white background */
+/* #define PAPER_WHITE */
+
 // Declare NTP servers and the setting constants
 const char* server1 = "ntp.nict.jp";
 const char* server2 = "time.google.com";
@@ -31,7 +34,7 @@ void taskPeriodical(void *pvParameters);
 
 // Declare function to report data to Google Spreadsheet and obtain HTTP handler
 void reportGSS(float f);
-const char* apiURL = "https://script.google.com/macros/s/XXXXXXXXX/exec";
+const char* apiURL = "https://script.google.com/macros/s/XXXXXXXXXX/exec";
 int httpCode;
 HTTPClient http;
 
@@ -65,6 +68,7 @@ AnalogMeter mtr(range, sizeof(range) / sizeof(range[0]), unit);
 void setup() {
   M5.begin();
   M5.Power.begin();
+  M5.Lcd.setBrightness(80);
 
   // Set up the pin
   pinMode(ANALOG, INPUT);
@@ -93,7 +97,17 @@ void setup() {
   timerAlarmEnable(timer);
 
   // Clear LCD and write fixed text
+#ifdef PAPER_WHITE
+  M5.Lcd.fillScreen(WHITE);
+  mtr.colBG = WHITE;
+  mtr.colGaugeLarge = BLACK;
+  mtr.colLabelSmall = DARKGREY;
+  mtr.colLabelLarge= BLACK;
+  mtr.colUnit = BLACK;
+  mtr.colVal = BLACK;
+#else
   M5.Lcd.fillScreen(BLACK);
+#endif
 
   // Draw meter gauge
   mtr.drawGauge();
@@ -109,7 +123,11 @@ void loop() {
   } else if (freq < 49.9 || freq > 50.1) {
     mtr.colVal = YELLOW;
   } else {
+#ifdef PAPER_WHITE
+    mtr.colVal = BLACK;
+#else
     mtr.colVal = WHITE;
+#endif
   }
 
   // Show analog meter

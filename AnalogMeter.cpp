@@ -61,7 +61,7 @@ void AnalogMeter::drawGauge() {
         M5.Lcd.printf("%.1f", range[i]);
       } else {
         setCursorPolar(x0 - 14, y0 - 8, alpha, r0 + 25, 4);
-        M5.Lcd.setTextColor(WHITE);
+        M5.Lcd.setTextColor(colLabelLarge);
         M5.Lcd.printf("%d", int(range[i]));
       }
       
@@ -83,7 +83,7 @@ void AnalogMeter::update(float val) {
   float alpha = ((-0.5 + (valHand - rMin) / (rMax - rMin)) * theta0) / 180 * M_PI;
 
   // Erase old hand
-  drawLinePolar(x0, y0, alpha_old, rHand1, rHand2, BLACK);
+  drawLinePolar(x0, y0, alpha_old, rHand1, rHand2, colBG);
 
   // Write unit
   M5.Lcd.setCursor(144, 108, 4);

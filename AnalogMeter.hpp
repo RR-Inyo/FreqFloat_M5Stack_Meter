@@ -21,7 +21,7 @@ class AnalogMeter {
     int colGaugeSmall = DARKGREY;
     int colGaugeLarge = WHITE;
     int colLabelSmall = LIGHTGREY;
-    int colLabelLarge = LIGHTGREY;
+    int colLabelLarge = WHITE;
     int colHand = RED;
     int colUnit = WHITE;
     int colVal = WHITE;

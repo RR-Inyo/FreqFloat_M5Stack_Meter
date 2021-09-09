@@ -13,6 +13,8 @@
 // Declare WiFi constants
 const char* ssid = "XXXXXXXXXX";
 const char* password = "XXXXXXXXXX";
+const int colText = DARKGREY;
+const int colBG = BLACK;
 
 // WiFi connection function
 void connectWiFi(void) {
@@ -35,7 +37,7 @@ void showClock(void)
   if (getLocalTime(&tm)) {
     M5.Lcd.setTextSize(1);
     M5.Lcd.setCursor(0, 0, 1);
-    M5.Lcd.setTextColor(WHITE, BLACK);
+    M5.Lcd.setTextColor(colText, colBG);
     M5.Lcd.printf("%d-%02d-%02d %02d:%02d",
                   tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
                   tm.tm_hour, tm.tm_min);
@@ -47,7 +49,7 @@ void showIPAddress(void)
 {
   M5.Lcd.setTextSize(1);
   M5.Lcd.setCursor(132, 0, 1);
-  M5.Lcd.setTextColor(WHITE, BLACK);
+  M5.Lcd.setTextColor(colText, colBG);
   M5.Lcd.print("IP:");
   M5.Lcd.print(WiFi.localIP());
 }
@@ -71,39 +73,39 @@ void showBatt(void)
   // Show numeric
   M5.Lcd.setTextSize(1);
   M5.Lcd.setCursor(270, 2, 1);
-  M5.Lcd.setTextColor(WHITE, BLACK);
+  M5.Lcd.setTextColor(colText, colBG);
   M5.Lcd.printf("%3d%%", battLevel);
 
   // Show blocks
   // 100%
   if (battLevel > 99) {
-    M5.Lcd.fillRect(265 + 6 * 5, 2, 5, 8, WHITE);
+    M5.Lcd.fillRect(265 + 6 * 5, 2, 5, 8, colText);
   } else {
-    M5.Lcd.fillRect(265 + 6 * 5, 2, 5, 8, BLACK);
-    M5.Lcd.drawRect(265 + 6 * 5, 2, 5, 8, WHITE);
+    M5.Lcd.fillRect(265 + 6 * 5, 2, 5, 8, colBG);
+    M5.Lcd.drawRect(265 + 6 * 5, 2, 5, 8, colText);
   }
 
   // 75%
   if (battLevel > 74) {
-    M5.Lcd.fillRect(265 + 6 * 6, 2, 5, 8, WHITE);
+    M5.Lcd.fillRect(265 + 6 * 6, 2, 5, 8, colText);
   } else {
-    M5.Lcd.fillRect(265 + 6 * 6, 2, 5, 8, BLACK);
-    M5.Lcd.drawRect(265 + 6 * 6, 2, 5, 8, WHITE);
+    M5.Lcd.fillRect(265 + 6 * 6, 2, 5, 8, colBG);
+    M5.Lcd.drawRect(265 + 6 * 6, 2, 5, 8, colText);
   }
 
   // 50%
   if (battLevel > 49) {
-    M5.Lcd.fillRect(265 + 6 * 7, 2, 5, 8, WHITE);
+    M5.Lcd.fillRect(265 + 6 * 7, 2, 5, 8, colText);
   } else {
-    M5.Lcd.fillRect(265 + 6 * 7, 2, 5, 8, BLACK);
-    M5.Lcd.drawRect(265 + 6 * 7, 2, 5, 8, WHITE);
+    M5.Lcd.fillRect(265 + 6 * 7, 2, 5, 8, colBG);
+    M5.Lcd.drawRect(265 + 6 * 7, 2, 5, 8, colText);
   }
 
   // 25%
   if (battLevel > 24) {
-    M5.Lcd.fillRect(265 + 6 * 8, 2, 5, 8, WHITE);
+    M5.Lcd.fillRect(265 + 6 * 8, 2, 5, 8, colText);
   } else {
-    M5.Lcd.drawRect(265 + 6 * 8, 2, 5, 8, WHITE);
+    M5.Lcd.drawRect(265 + 6 * 8, 2, 5, 8, colText);
   }
 
   // Preserve bettery level
