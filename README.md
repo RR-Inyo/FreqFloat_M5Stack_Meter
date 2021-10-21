@@ -18,7 +18,7 @@ One of the analog input pin, which is GPIO35 in the photo, is floating and my ha
 
 ![M5Stack screen close up](M5Stack_screen.jpg)
 
-The photo above shows a close-up of the M5Stack screen. I have also created a program to draw this analog meter to try to make it more attractive. The analog meter is created not only for this frequency monitor, but can be customized for other uses. See AnalogMeter.hpp and AnalogMeter.cpp in this repository for details.
+The photo above shows a close-up of the M5Stack screen. I have also created a program to draw this analog meter to try to make it more fancy. The analog meter is created not only for this frequency monitor, but can be customized for other uses. See AnalogMeter.hpp and AnalogMeter.cpp in this repository for details.
 
 ## How it works
 Actually, as the A-D converter accepts only positive voltages, the observed voltage looks like a half wave as shown below.
